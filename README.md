@@ -2,22 +2,22 @@
 
 A fully functional online shopping store built with Django.
 
-## 🚀 Project Overview
+#  Project Overview
 
 **Built by:** Sameer  
 **Internship:** CodeAlpha  
 **Tech Stack:** Python, Django, HTML, CSS, Bootstrap, SQLite
 
-## Features
+# Features
 
-- 🛒 **Shopping Cart** — Add/remove items, update quantities
-- 👤 **User Authentication** — Register, Login, Logout
-- 📦 **Product Catalog** — Browse products by category
-- 💳 **Checkout System** — Place orders with shipping details
-- 📋 **Order History** — Track past orders
-- 🔍 **Product Search** — Filter by category
+-  **Shopping Cart** — Add/remove items, update quantities
+-  **User Authentication** — Register, Login, Logout
+-  **Product Catalog** — Browse products by category
+-  **Checkout System** — Place orders with shipping details
+-  **Order History** — Track past orders
+-  **Product Search** — Filter by category
 
-## Project Structure
+# Project Structure
 
 ```
 ecommerce_django/
@@ -31,7 +31,7 @@ ecommerce_django/
 └── db.sqlite3        # Database
 ```
 
-## Setup Instructions
+# Setup Instructions
 
 ```bash
 # Clone the repository
@@ -54,11 +54,11 @@ python manage.py runserver
 
 Visit: `http://127.0.0.1:8000`
 
-## Screenshots
+# Screenshots
 
 > Add your screenshots here
 
-## What I Learned
+# What I Learned
 
 - Django models, views, and templates
 - User authentication system
@@ -66,7 +66,7 @@ Visit: `http://127.0.0.1:8000`
 - Order processing & management
 - Bootstrap for responsive design
 
-## Future Improvements
+# Future Improvements
 
 - Payment gateway integration
 - Email notifications
@@ -75,8 +75,8 @@ Visit: `http://127.0.0.1:8000`
 
 ---
 
-**Connect with me:**  
-LinkedIn: [Your LinkedIn URL]  
-GitHub: [Your GitHub URL]
+**Connect with me:**
+LinkedIn: [https://www.linkedin.com/in/syed-sameer-gul-kakakhel-0a7887381/]  
+GitHub: [https://github.com/Khansameercr7]
 
 #Django #Python #WebDevelopment #Ecommerce #CodeAlpha #Internship
