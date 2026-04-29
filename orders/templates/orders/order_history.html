@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Sameer's Orders{% endblock %}
+
+{% block content %}
+<h2>📋 My Orders</h2>
+
+{% for order in orders %}
+<div class="card mb-4 shadow-sm">
+  <div class="card-header d-flex justify-content-between">
+    <span><strong>Order #{{ order.id }}</strong> — {{ order.created_at|date:"M d, Y" }}</span>
+    <span class="badge bg-primary">{{ order.get_status_display }}</span>
+  </div>
+  <ul class="list-group list-group-flush">
+    {% for item in order.items.all %}
+    <li class="list-group-item d-flex justify-content-between">
+      <span>{{ item.product.name }} × {{ item.quantity }}</span>
+      <span>${{ item.get_subtotal }}</span>
+    </li>
+    {% endfor %}
+    <li class="list-group-item d-flex justify-content-between bg-light">
+      <strong>Total</strong>
+      <strong class="text-success">${{ order.total }}</strong>
+    </li>
+  </ul>
+</div>
+{% empty %}
+  <p class="text-muted">No orders yet. <a href="{% url 'home' %}">Start shopping!</a></p>
+{% endfor %}
+{% endblock %}

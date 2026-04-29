@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}Sameer's Cart{% endblock %}
+
+{% block content %}
+<h2>🛒 My Cart</h2>
+
+{% if cart.items.all %}
+<table class="table table-bordered align-middle">
+  <thead class="table-dark">
+    <tr>
+      <th>Product</th><th>Price</th><th>Quantity</th><th>Subtotal</th><th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in cart.items.all %}
+    <tr>
+      <td>{{ item.product.name }}</td>
+      <td>${{ item.product.price }}</td>
+      <td>
+        <form method="POST" action="{% url 'update_cart' item.id %}" class="d-flex gap-2">
+          {% csrf_token %}
+          <input type="number" name="quantity" value="{{ item.quantity }}" min="0" class="form-control" style="width:80px;">
+          <button type="submit" class="btn btn-sm btn-secondary">Update</button>
+        </form>
+      </td>
+      <td>${{ item.get_subtotal }}</td>
+      <td>
+        <a href="{% url 'remove_from_cart' item.id %}" class="btn btn-sm btn-danger">Remove</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  <tfoot>
+    <tr class="table-success">
+      <td colspan="3"><strong>Total</strong></td>
+      <td colspan="2"><strong>${{ cart.get_total }}</strong></td>
+    </tr>
+  </tfoot>
+</table>
+
+<a href="{% url 'checkout' %}" class="btn btn-success btn-lg">Proceed to Checkout →</a>
+<a href="{% url 'home' %}" class="btn btn-outline-secondary btn-lg ms-2">Continue Shopping</a>
+
+{% else %}
+  <div class="text-center py-5">
+    <h4 class="text-muted">My cart is empty 😔</h4>
+    <a href="{% url 'home' %}" class="btn btn-primary mt-3">Start Shopping</a>
+  </div>
+{% endif %}
+{% endblock %}
